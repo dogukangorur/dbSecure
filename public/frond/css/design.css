@@ -1,0 +1,150 @@
+
+ .loader{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+  }
+  .loader span{
+    width:50px;
+  }
+  .hidden{
+    animation: fadeOut 1s ease-in;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeOut{
+    100%{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+.welcome{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:center;
+}
+.logo{
+  width: 150px;
+  height: 150px;
+}
+.logo a img{
+  width: 100%;
+  height: 100%;
+}
+.brand{
+  font-size: 40px;
+  color: crimson;
+}
+.brand em{
+  font-style: normal;
+  color:white;
+}
+.options a{
+  width: 100px;
+}
+#features{
+  width: 100%;
+  background: url("/img/frond/3.png");
+  background-size: cover;
+  background-position:top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.kart{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+  border-radius: 20px;
+  border: 1px solid crimson;
+  color: crimson;
+  margin: 0px 20px;
+  height: 150px;
+
+}
+.kart i{
+  color: crimson;
+  font-size: 30px;
+  font-weight: 800;
+}
+.kart:hover{
+  cursor: pointer;
+  position: relative;
+  color:white;
+  transform: translateY(-10px);
+  background-color: crimson;
+  transition: all 0.3s linear;
+}
+.kart:hover i{
+  color:white;
+}
+.login{
+  width: 50%;
+  text-align: center;
+}
+.login form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login form label{
+ color: white;
+}
+.login form input{
+    
+    border:3px solid crimson;
+    border-radius: 5px;
+    color: white;
+    
+ }
+ .login form input:focus{
+    
+  border:3px solid crimson;
+  color: white;
+}
+
+@media (max-width:1000px) {
+  .kart{
+    width: 40%;
+  }
+}
+@media (max-width:440px) {
+  .kart{
+    width: 35%;
+    font-size: 10px;
+    height: 150px;
+  }
+  .kart h2{
+    font-size: 15px;
+  }
+
+}
+@media (max-width:300px) {
+  .kart{
+    width: 100%;
+  }
+}

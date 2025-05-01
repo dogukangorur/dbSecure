@@ -1,0 +1,79 @@
+.sb-topnav .navbar-brand{
+    width: 80px;
+}
+.sb-topnav{
+    display: flex;
+    justify-content: space-between;
+}
+.loader{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: black;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+  }
+  .info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .loader span{
+    width:50px;
+  }
+  .hidden{
+    animation: fadeOut 1s ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  .cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .chart{
+    width: 300px;
+  }
+  .roww{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+  }
+  .table {
+    border-collapse: separate; 
+    border-spacing: 0 10px; 
+  }
+  #doughnutChart{
+    height: 100px;
+  }
+
+.datatable-pagination-list-item.datatable-active a {
+    color: white !important;
+    background-color: crimson !important;
+    border-radius: 4px;
+    padding: 5px 10px;
+} 
+  .file{
+    width: 100%;
+  }
+  
+  .form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+} 
+.shadow-red {
+  box-shadow: 0px 1px 5px 4px rgba(255, 0, 0, 0.3);
+}
+
+  @keyframes fadeOut{
+    100%{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
