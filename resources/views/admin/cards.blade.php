@@ -1,5 +1,5 @@
 @extends("admin.admin_master")
-@section("title","Cards")
+@section("title","Kartlar")
 
 @section("content")
 

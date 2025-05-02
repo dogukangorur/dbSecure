@@ -1,5 +1,5 @@
 @extends("admin.admin_master")
-@section("title","Cards")
+@section("title","Şifreler")
 
 @section("content")
 
@@ -14,7 +14,6 @@
         <hr class="text-danger">
     </div>
 </div>
-<br><br>
 
 <div class="row">
     <div class="col-12">

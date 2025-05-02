@@ -50,7 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/files', [FileController::class, 'index'])->name('files');
     Route::post('/api/files', [FileController::class, 'save'])->name('save_files');
     Route::get('/files/download/{id}', [FileController::class, 'download'])->name('file_download');
-
+    Route::get('/files/delete/{id}', [FileController::class, 'delete'])->name('file_delete');
 
 });
 

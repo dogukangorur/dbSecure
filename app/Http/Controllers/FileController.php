@@ -118,8 +118,8 @@ class FileController extends Controller
         $fileType = $request->input("fileType");
         $fileName=now()->format("dmYHis").$fileType;
 
-        $path="encrypted_files/{$fileName}.enc";
-        Storage::put($path, $totalEncData);
+        $path = "encrypted_files/{$fileName}.enc";
+        Storage::disk('s3')->put($path, $totalEncData);
         File::create([
             "kullanici_id"=>Auth::user()->id,
             "dosya_tanim"=>$pass,
@@ -138,7 +138,7 @@ class FileController extends Controller
         $key =$file->dosya_tanim;
         
         $path = $file->dosya_yolu;
-        $fileContent = Storage::get($path);
+        $fileContent = Storage::disk('s3')->get($path);
         $hashedKey = hash('sha256', $key);
 
         $substring = strtolower(substr($fileContent, 34, 16));
@@ -176,7 +176,7 @@ class FileController extends Controller
                     break;
             }
             return response()->make(
-                base64_decode($base64Data), // Base64 verisini çöz
+                base64_decode($base64Data), 
                 200,
                 [
                     'Content-Type' => $mimeType,
@@ -191,5 +191,25 @@ class FileController extends Controller
         ->header('Content-Disposition', 'attachment; filename="' . $fileName . '"');
             
     }
+
+    public function delete($id)
+{
+    $file = File::find($id);
+
+    if (!$file) {
+        return response()->json(['message' => 'Dosya bulunamadı.'], 404);
+    }
+
+    $path = $file->dosya_yolu;
+
+    if (Storage::disk('s3')->exists($path)) {
+        Storage::disk('s3')->delete($path);
+    }
+
+    $file->delete();
+
+    toastr()->success("Dosya başarılı bir şekilde silindi !");
+    return redirect()->back();
+}
 
 }

@@ -1,5 +1,5 @@
 @extends("admin.admin_master")
-@section("title","Encryption")
+@section("title","Decryption")
 @section("content")
 @section("csrf")
 <meta name="csrf-token" content="{{ csrf_token() }}"> @endsection
