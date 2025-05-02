@@ -41,7 +41,7 @@
                                        @foreach($files as $index => $file)
                                         <tr >
                                             <td>{{$index+1}}</td>
-                                            <td>{{$file->dosya_tanim}}</td>
+                                            <td>{{$file->dosya_orj_adi}}</td>
                                             <td>{{date("d-m-Y H:i:s",strtotime($file->created_at))}}</td>
                                             <td>
                                                 
