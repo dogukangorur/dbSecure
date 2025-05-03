@@ -13,7 +13,6 @@
         <hr class="text-danger">
     </div>
 </div>
-<br><br>
 
 <div class="row">
     <div class="col-12">

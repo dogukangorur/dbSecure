@@ -7,7 +7,7 @@
         @csrf
 
         <div class="row" style="max-width: 520px;">
-            <div class="col-md-6 mb-3">
+            <div class="col-6 col-md-6 mb-3 d-flex flex-column" >
                 <label for="name">Ad</label>
                 <input id="name" class="form-control bg-transparent" type="text" name="name" value="{{ old('name') }}" required autofocus />
                 @error('name')
@@ -15,7 +15,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-6 col-md-6 mb-3 d-flex flex-column">
                 <label for="surname">Soyad</label>
                 <input id="surname" class="form-control bg-transparent" type="text" name="surname" value="{{ old('surname') }}" required />
                 @error('surname')
@@ -23,7 +23,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-6 col-md-6 mb-3 d-flex flex-column">
                 <label for="number">Telefon</label>
                 <input id="number" class="form-control bg-transparent" type="text" name="number" value="{{ old('number') }}" maxlength="11" required />
                 @error('number')
@@ -31,7 +31,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-6 col-md-6 mb-3 d-flex flex-column">
                 <label for="email">Email</label>
                 <input id="email" class="form-control bg-transparent" type="email" name="email" value="{{ old('email') }}" required />
                 @error('email')
@@ -39,7 +39,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-6 col-md-6 mb-3 d-flex flex-column">
                 <label for="password">Şifre</label>
                 <input id="password" class="form-control bg-transparent" type="password" name="password" required />
                 @error('password')
@@ -47,7 +47,7 @@
                 @enderror
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-6 col-md-6 mb-3 d-flex flex-column">
                 <label for="password_confirmation">Şifre (Tekrar)</label>
                 <input id="password_confirmation" class="form-control bg-transparent" type="password" name="password_confirmation" required />
                 @error('password_confirmation')

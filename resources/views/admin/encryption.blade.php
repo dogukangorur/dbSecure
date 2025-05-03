@@ -104,6 +104,9 @@
             },
             success: function(response) {
                 toastr.success(response.data);
+                setTimeout(function() {
+                window.location.href = '/files';
+            }, 1000);
             },
             error: function(xhr) {
                 toastr.error("Hata");

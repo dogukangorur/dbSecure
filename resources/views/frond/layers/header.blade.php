@@ -22,6 +22,34 @@
         <link href="{{asset('frond/lib/OwlCarousel/dist/assets/owl.theme.default.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('frond/css/design.css')}}">
 </head>
+<style>
+
+@media (max-width: 1000px) {
+  .welcome {
+    height: 900px;
+  }
+}
+@media (max-width: 500px) {
+.login{
+ width: 100%;
+  }
+  .col-md-6{
+    display: flex;
+  }
+  .kart {
+        width: 80%;
+        font-size: 10px;
+        height: 0px;
+    }
+    #features{
+        padding-bottom: 0px !important;
+        padding-top: 20px !important;
+    }
+}
+
+</style>
+
+
 <body>
 <div class="loader">
         <div class="spinner-border text-danger" role="status">
