@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h3>🌐 TR</h3>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# dbSecure
 
-## About Laravel
+**Kişisel Veriler İçin Güvenli, Şifrelenmiş ve Bulutta Saklanan Web Tabanlı Sistem**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 Proje Tanıtımı
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+`dbSecure`, kullanıcıların kişisel verilerini AES-256-CBC algoritması ile şifreleyerek Amazon Web Services (AWS) altyapısında güvenli bir şekilde depolayan Laravel tabanlı bir web uygulamasıdır. Kullanıcı doğrulama süreci Mailgun üzerinden tek seferlik kod ile yapılmakta ve giriş log'ları ile güvenlik artırılmaktadır.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Özellikler
 
-## Learning Laravel
+- 🔐 AES-256-CBC algoritmasıyla istemci taraflı veri şifreleme
+- ☁️ Şifreli dosyaların `.enc` formatında AWS S3 üzerinde saklanması
+- 🧩 AWS RDS (MySQL) üzerinde kullanıcı ve meta veri yönetimi
+- 📧 Mailgun ile tek kullanımlık kod üzerinden iki aşamalı doğrulama
+- 👁️ Son 10 giriş hareketinin loglanması ve kullanıcıya sunulması
+- 🗃️ Şifre, kredi kartı ve dosya yönetimi modülleri
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Kullanılan Teknolojiler
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+| Katman | Teknoloji |
+|-------|-----------|
+| Backend | Laravel (PHP Framework) |
+| Veritabanı | MySQL (AWS RDS) |
+| Depolama | AWS S3 |
+| E-posta Servisi | Mailgun |
+| Sunucu | AWS EC2 (Linux) |
+| Şifreleme | AES-256-CBC + SHA-256 |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🧱 Sistem Mimarisi
 
-## Laravel Sponsors
+- Laravel tabanlı **MVC** mimarisi
+- **RESTful API** yapısı
+- Gelişmiş **kimlik doğrulama** ve **token yönetimi**
+- Log tabanlı kullanıcı izleme
+- .env ile güvenli yapılandırma yönetimi
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📁 Modüller
 
-### Premium Partners
+1. **Şifre Yönetimi**: Kullanıcılar şifre ekleyebilir, görüntüleyebilir ve silebilir.
+2. **Kart Yönetimi**: Kredi kartı bilgileri şifrelenerek güvenle saklanır.
+3. **Dosya Yönetimi**: Yerel dosyalar şifrelenerek `.enc` formatında yüklenir.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🔐 Güvenlik Yaklaşımları
 
-## Contributing
+- Veriler buluta gönderilmeden **önce şifrelenir** (client-side encryption)
+- Şifreleme anahtarı SHA-256 ile hashlenerek sisteme gömülür
+- **Tek kullanımlık doğrulama kodu** ile brute-force saldırılarına karşı koruma
+- Kullanıcıların geçmiş giriş hareketlerinin raporlanması
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<div>
+    <img src="img/1.jpg">
+</div>
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<h3>🌐 ENG</h3>
 
-## Security Vulnerabilities
+# dbSecure
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**A Web-Based System for Secure, Encrypted, and Cloud-Stored Personal Data**
 
-## License
+## 📌 Project Overview
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`dbSecure` is a Laravel-based web application that securely stores users' personal data using AES-256-CBC encryption and Amazon Web Services (AWS) infrastructure. User authentication is enhanced through a one-time verification code sent via Mailgun, and login activities are logged to strengthen system security.
+
+## 🚀 Features
+
+- 🔐 Client-side data encryption with the AES-256-CBC algorithm
+- ☁️ Encrypted files are stored on AWS S3 in `.enc` format
+- 🧩 User and metadata management using AWS RDS (MySQL)
+- 📧 Two-factor authentication via one-time code with Mailgun
+- 👁️ Displays the last 10 login activities to users
+- 🗃️ Modules for managing passwords, credit cards, and files
+
+## 🛠️ Technologies Used
+
+| Layer | Technology |
+|-------|------------|
+| Backend | Laravel (PHP Framework) |
+| Database | MySQL (AWS RDS) |
+| Storage | AWS S3 |
+| Email Service | Mailgun |
+| Server | AWS EC2 (Linux) |
+| Encryption | AES-256-CBC + SHA-256 |
+
+## 🧱 System Architecture
+
+- Laravel-based **MVC** architecture
+- **RESTful API** design
+- Advanced **authentication** and **token management**
+- Log-based user activity tracking
+- Secure environment management using `.env` configuration
+
+## 📁 Modules
+
+1. **Password Management**: Users can add, view, or delete passwords.
+2. **Card Management**: Credit card data is securely stored with encryption.
+3. **File Management**: Local files are encrypted and uploaded as `.enc` format.
+
+## 🔐 Security Approaches
+
+- Data is encrypted **before being sent to the cloud** (client-side encryption)
+- Encryption keys are hashed with SHA-256 and embedded securely
+- **One-time verification codes** help prevent brute-force attacks
+- Users are informed about their recent login activities
