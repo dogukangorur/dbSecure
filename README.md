@@ -50,9 +50,11 @@
 - Kullanıcıların geçmiş giriş hareketlerinin raporlanması
 
 <div>
-    <img src="img/1.jpg">
+    <img src="public/img/1.png" height=200px>
+    <img src="public/img/5.png" height=200px>
+    <img src="public/img/6.png" height=200px>
+    <img src="public/img/8.png" height=200px>
 </div>
-
 
 <h3>🌐 ENG</h3>
 
