@@ -49,11 +49,11 @@
 - **Tek kullanımlık doğrulama kodu** ile brute-force saldırılarına karşı koruma
 - Kullanıcıların geçmiş giriş hareketlerinin raporlanması
 
-<div>
-    <img src="public/img/1.png" height=200px>
-    <img src="public/img/5.png" height=200px>
-    <img src="public/img/6.png" height=200px>
-    <img src="public/img/8.png" height=200px>
+<div style="display:flex;justify-content:around-between;">
+    <img src="public/img/1.png" height=200px style="width:48%">
+    <img src="public/img/5.png" height=200px style="width:48%">
+    <img src="public/img/6.png" height=200px style="width:48%">
+    <img src="public/img/8.png" height=200px style="width:48%">
 </div>
 
 <h3>🌐 ENG</h3>
